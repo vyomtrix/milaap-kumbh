@@ -36,20 +36,24 @@ export default function AdminPage() {
 
   if (!authed) {
     return (
-      <div className="min-h-screen bg-[var(--bg)] text-[var(--text)] flex items-center justify-center">
+      <div className="page-shell min-h-screen bg-[var(--bg)] text-[var(--text)] flex items-center justify-center p-4">
         <form
           onSubmit={login}
-          className="bg-[var(--surface)] p-8 rounded-2xl border border-[var(--border)] w-80"
+          className="app-card relative overflow-hidden p-7 sm:p-9 rounded-[1.75rem] w-full max-w-sm"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--indigo)] to-[var(--amber)] flex items-center justify-center font-bold mb-4">A</div>
-          <h1 className="text-lg font-semibold mb-1">Admin Access</h1>
-          <p className="text-xs text-[var(--text-dim)] mb-4">Control center login</p>
-          <input className="w-full bg-[var(--surface-2)] border border-[var(--border)] rounded-xl px-4 py-2.5 text-sm mb-3 outline-none focus:border-[var(--indigo)]"
+          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[var(--saffron)] via-[var(--gold)] to-[var(--maroon)]" />
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[var(--saffron)] to-[var(--maroon)] flex items-center justify-center text-xl shadow-md mb-5">⌁</div>
+          <span className="eyebrow">Restricted access</span>
+          <h1 className="text-3xl font-semibold mt-3 mb-1">Control center</h1>
+          <p className="text-sm leading-6 text-[var(--text-dim)] mb-6">Use your administrator credentials to manage cameras, cases, and live alerts.</p>
+          <label htmlFor="admin-username" className="text-xs font-semibold text-[var(--text-dim)]">Username</label>
+          <input id="admin-username" className="focus-ring w-full bg-[var(--surface-2)] border border-[var(--border)] rounded-xl px-4 py-2.5 text-sm mt-1.5 mb-4 outline-none focus:border-[var(--indigo)]"
             placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} required />
-          <input type="password" className="w-full bg-[var(--surface-2)] border border-[var(--border)] rounded-xl px-4 py-2.5 text-sm mb-3 outline-none focus:border-[var(--indigo)]"
+          <label htmlFor="admin-password" className="text-xs font-semibold text-[var(--text-dim)]">Password</label>
+          <input id="admin-password" type="password" className="focus-ring w-full bg-[var(--surface-2)] border border-[var(--border)] rounded-xl px-4 py-2.5 text-sm mt-1.5 mb-3 outline-none focus:border-[var(--indigo)]"
             placeholder="Password" value={pw} onChange={(e) => setPw(e.target.value)} />
           {loginError && <p className="text-xs text-[var(--red)] mb-3">{loginError}</p>}
-          <button className="w-full bg-[var(--indigo)] hover:bg-[var(--indigo-hover)] rounded-xl py-2.5 text-sm font-semibold transition">
+          <button className="focus-ring btn-saffron w-full rounded-xl py-3 text-sm font-semibold">
             Log in
           </button>
         </form>
@@ -58,18 +62,19 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[var(--bg)] text-[var(--text)]">
+    <div className="page-shell min-h-screen bg-[var(--bg)] text-[var(--text)]">
       <Nav role="Admin" />
-      <div className="max-w-7xl mx-auto px-6 py-6">
-        <div className="flex items-center justify-between mb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-7 sm:py-10">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-7">
           <div>
-            <h1 className="text-xl font-semibold">Control Center</h1>
-            <p className="text-sm text-[var(--text-dim)]">Real-time monitoring and case management</p>
+            <span className="eyebrow">Live operations</span>
+            <h1 className="text-3xl sm:text-4xl font-semibold mt-3">Control Center</h1>
+            <p className="text-sm sm:text-base text-[var(--text-dim)] mt-2">Monitor configured feeds, incoming matches, and case resolution in one place.</p>
           </div>
-          <div className="flex gap-1 p-1 bg-[var(--surface-2)] rounded-xl border border-[var(--border)]">
+          <div className="grid grid-cols-3 gap-1 p-1.5 bg-[var(--surface-2)]/85 rounded-2xl border border-[var(--border)] w-full lg:w-auto">
             {(["overview", "cameras", "complaints"] as const).map((t) => (
-              <button key={t} onClick={() => setTab(t)}
-                className={`px-4 py-1.5 rounded-lg text-sm font-medium capitalize transition ${
+              <button key={t} onClick={() => setTab(t)} aria-pressed={tab === t}
+                className={`focus-ring px-4 py-2 rounded-xl text-sm font-semibold capitalize transition ${
                   tab === t ? "bg-[var(--indigo)] text-white" : "text-[var(--text-dim)] hover:text-[var(--text)]"
                 }`}>
                 {t}

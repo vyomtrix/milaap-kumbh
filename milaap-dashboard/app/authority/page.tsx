@@ -71,19 +71,21 @@ export default function AuthorityPage() {
 
   if (!authorityId) {
     return (
-      <div className="min-h-screen bg-[var(--bg)] text-[var(--text)] flex items-center justify-center px-4">
-        <form onSubmit={login} className="bg-[var(--surface)] border border-[var(--border)] p-8 rounded-2xl w-full max-w-sm diya-glow card-accent parchment-card">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--saffron)] to-[var(--maroon)] flex items-center justify-center font-bold mb-4 text-lg shadow-md">👮</div>
-          <h1 className="text-lg font-semibold mb-1">Authority Portal</h1>
-          <p className="heading-hindi text-xs text-[var(--saffron)] mb-5">क्षेत्र अधिकारी पोर्टल</p>
+      <div className="page-shell min-h-screen bg-[var(--bg)] text-[var(--text)] flex items-center justify-center px-4 py-8">
+        <form onSubmit={login} className="app-card relative overflow-hidden p-7 sm:p-9 rounded-[1.75rem] w-full max-w-sm">
+          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[var(--maroon)] via-[var(--gold)] to-[var(--saffron)]" />
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[var(--saffron)] to-[var(--maroon)] flex items-center justify-center mb-5 text-xl shadow-md">👮</div>
+          <span className="eyebrow">Response desk</span>
+          <h1 className="text-3xl font-semibold mt-3 mb-1">Authority portal</h1>
+          <p className="heading-hindi text-sm text-[var(--saffron)] mb-5">क्षेत्र अधिकारी पोर्टल</p>
           <label htmlFor="authority-username" className="text-xs text-[var(--text-dim)] block mb-1.5 font-medium">Username</label>
-          <input className="w-full bg-[var(--surface-2)] border border-[var(--border)] rounded-xl px-4 py-2.5 text-sm mb-3 outline-none focus:border-[var(--saffron)] focus:shadow-[0_0_0_3px_rgba(232,117,26,0.1)] transition"
+          <input className="focus-ring w-full bg-[var(--surface-2)] border border-[var(--border)] rounded-xl px-4 py-2.5 text-sm mb-4 outline-none focus:border-[var(--saffron)] focus:shadow-[0_0_0_3px_rgba(232,117,26,0.1)] transition"
             id="authority-username" value={username} onChange={(e) => setUsername(e.target.value)} required />
           <label htmlFor="authority-password" className="text-xs text-[var(--text-dim)] block mb-1.5 font-medium">Password</label>
-          <input id="authority-password" type="password" className="w-full bg-[var(--surface-2)] border border-[var(--border)] rounded-xl px-4 py-2.5 text-sm mb-4 outline-none focus:border-[var(--saffron)] focus:shadow-[0_0_0_3px_rgba(232,117,26,0.1)] transition"
+          <input id="authority-password" type="password" className="focus-ring w-full bg-[var(--surface-2)] border border-[var(--border)] rounded-xl px-4 py-2.5 text-sm mb-4 outline-none focus:border-[var(--saffron)] focus:shadow-[0_0_0_3px_rgba(232,117,26,0.1)] transition"
             value={password} onChange={(e) => setPassword(e.target.value)} />
           {loginError && <p className="text-xs text-[var(--red)] mb-3">{loginError}</p>}
-          <button className="w-full btn-saffron rounded-xl py-2.5 text-sm">
+          <button className="focus-ring w-full btn-saffron rounded-xl py-3 text-sm">
             Log in
           </button>
         </form>
@@ -101,28 +103,33 @@ export default function AuthorityPage() {
   const counts = { new: alerts.filter(a => a.status === "new").length, acknowledged: alerts.filter(a => a.status === "acknowledged").length, resolved: alerts.filter(a => a.status === "resolved").length };
 
   return (
-    <div className="min-h-screen bg-[var(--bg)] text-[var(--text)]">
+    <div className="page-shell min-h-screen bg-[var(--bg)] text-[var(--text)]">
       <Nav role="Authority" name={authorityName} />
-      <div className="max-w-3xl mx-auto px-6 py-6">
-        <div className="grid grid-cols-3 gap-3 mb-6">
-          <div className="bg-[var(--surface)] border border-[var(--border)] rounded-xl p-4 text-center diya-glow card-accent">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-7 sm:py-10">
+        <div className="mb-7">
+          <span className="eyebrow">Assigned alerts</span>
+          <h1 className="text-3xl sm:text-4xl font-semibold mt-3">Response queue</h1>
+          <p className="text-sm sm:text-base text-[var(--text-dim)] mt-2">Review, acknowledge, and resolve the matches assigned to your station.</p>
+        </div>
+        <div className="grid grid-cols-3 gap-3 mb-7">
+          <div className="app-card rounded-2xl p-4 text-center card-accent">
             <p className="text-2xl font-bold text-[var(--red)]">{counts.new}</p>
             <p className="text-xs text-[var(--text-dim)] mt-1">New</p>
           </div>
-          <div className="bg-[var(--surface)] border border-[var(--border)] rounded-xl p-4 text-center diya-glow card-accent">
+          <div className="app-card rounded-2xl p-4 text-center card-accent">
             <p className="text-2xl font-bold text-[var(--amber)]">{counts.acknowledged}</p>
             <p className="text-xs text-[var(--text-dim)] mt-1">In progress</p>
           </div>
-          <div className="bg-[var(--surface)] border border-[var(--border)] rounded-xl p-4 text-center diya-glow card-accent">
+          <div className="app-card rounded-2xl p-4 text-center card-accent">
             <p className="text-2xl font-bold text-[var(--green)]">{counts.resolved}</p>
             <p className="text-xs text-[var(--text-dim)] mt-1">Resolved</p>
           </div>
         </div>
 
-        <div className="flex gap-1 mb-4 p-1 bg-[var(--surface-2)] rounded-xl border border-[var(--border)] w-fit">
+        <div className="flex gap-1 mb-5 p-1.5 bg-[var(--surface-2)]/85 rounded-2xl border border-[var(--border)] w-full sm:w-fit overflow-x-auto">
           {(["all", "new", "acknowledged", "resolved"] as const).map((f) => (
             <button key={f} onClick={() => setFilter(f)}
-              className={`px-4 py-1.5 rounded-lg text-xs font-medium capitalize transition ${
+              className={`focus-ring px-4 py-2 rounded-xl text-xs font-semibold capitalize transition ${
                 filter === f ? "btn-saffron" : "text-[var(--text-dim)] hover:text-[var(--text)]"
               }`}>{f}</button>
           ))}

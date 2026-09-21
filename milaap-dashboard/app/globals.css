@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #fdf6ec;
+  --bg: #fff9f1;
   --surface: #fff9f0;
   --surface-2: #f5e6d0;
   --surface-3: #e8d4b8;
@@ -21,6 +21,7 @@
   --text: #2c1810;
   --text-dim: #7a5c44;
   --text-dimmer: #a08060;
+  --shadow: 0 18px 45px rgba(104, 57, 19, 0.10);
 
   /* Legacy aliases so existing var(--indigo) references still work */
   --indigo: var(--saffron);
@@ -37,6 +38,7 @@ body {
     radial-gradient(ellipse at 50% 80%, rgba(139, 26, 26, 0.03) 0%, transparent 50%);
   color: var(--text);
   font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
+  min-width: 320px;
 }
 
 h1, h2, h3, .heading-hindi {
@@ -158,4 +160,66 @@ h1, h2, h3, .heading-hindi {
 
 .diya-pulse {
   animation: diya-flicker 2s ease-in-out infinite;
+}
+
+.page-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.page-shell::before,
+.page-shell::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  width: 34rem;
+  height: 34rem;
+  border-radius: 999px;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.page-shell::before {
+  top: 4rem;
+  left: -20rem;
+  background: radial-gradient(circle, rgba(232, 117, 26, 0.13), transparent 68%);
+}
+
+.page-shell::after {
+  right: -19rem;
+  bottom: -12rem;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.17), transparent 68%);
+}
+
+.app-card {
+  background: rgba(255, 249, 240, 0.84);
+  border: 1px solid rgba(212, 165, 116, 0.72);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.65rem;
+  color: var(--maroon);
+  background: rgba(255, 248, 232, 0.8);
+  border: 1px solid rgba(201, 168, 76, 0.45);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.soft-grid {
+  background-image: linear-gradient(rgba(201, 168, 76, 0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(201, 168, 76, 0.09) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+.focus-ring:focus-visible {
+  outline: 3px solid rgba(232, 117, 26, 0.35);
+  outline-offset: 3px;
 }

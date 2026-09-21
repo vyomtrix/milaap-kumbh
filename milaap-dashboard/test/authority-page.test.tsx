@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import AuthorityPage from "@/app/authority/page";
 
-const apiFetch = vi.fn();
+const apiFetch = vi.hoisted(() => vi.fn());
 vi.mock("@/lib/api", () => ({ apiFetch }));
 
 describe("AuthorityPage", () => {

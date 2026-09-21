@@ -2,8 +2,12 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import AdminPage from "@/app/admin/page";
 
-const apiFetch = vi.fn();
+const apiFetch = vi.hoisted(() => vi.fn());
 vi.mock("@/lib/api", () => ({ apiFetch }));
+vi.mock("@/components/AlertsPanel", () => ({ default: () => <div>Alerts</div> }));
+vi.mock("@/components/CameraGrid", () => ({ default: () => <div>Cameras</div> }));
+vi.mock("@/components/ComplaintsTable", () => ({ default: () => <div>Complaints</div> }));
+vi.mock("@/components/MapView", () => ({ default: () => <div>Map</div> }));
 
 describe("AdminPage", () => {
   beforeEach(() => {
