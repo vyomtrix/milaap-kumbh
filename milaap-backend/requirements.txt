@@ -1,0 +1,13 @@
+fastapi==0.139.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.20
+numpy==2.3.5
+opencv-python-headless==4.11.0.86
+insightface==0.7.3
+onnxruntime==1.23.2
+psycopg2-binary==2.9.10
+python-dotenv==1.1.0
+twilio==9.6.1
+bcrypt==5.0.0
+pytest==9.1.1
+httpx==0.28.1

@@ -1,0 +1,86 @@
+location_name,category,longitude,latitude
+Dwarka Circle / Dwarka Chowk,Traffic choke point,73.79564,19.98695
+Nashik Road-Dwarka corridor,Traffic choke point,73.8014105,19.9871372
+Kathe Galli,Traffic choke point,73.8078,19.9739
+Fame Signal,Traffic choke point,73.821,19.9645
+Upnagar,Traffic choke point,73.8167,19.9717777
+Upnagar Junction,Traffic choke point,73.8354,19.9549
+Datta Mandir Signal,Traffic choke point,73.8395,19.9515
+Dr. Ambedkar Nagar,Traffic choke point,73.846,19.9529
+Mumbai Naka,Traffic choke point,73.7839866,19.9870794
+Panchavati / Ramkund access zone,No-vehicle pressure zone,73.79062,20.0067
+Ramkund,No-vehicle pressure zone,73.79062,20.0067
+Godavari Ghat approaches,No-vehicle pressure zone,73.7902,20.0064
+Nashik Road Railway Station,Transfer node,73.84059,19.94884
+Bitco Signal / Bitco Chowk,Traffic choke point,73.839,19.9497
+CBS / Central Bus Stand,Transfer node,73.7799,19.9972
+Thakkar Bazaar / New Thakkar Bazar,Transfer node,73.7774,19.9964
+Trimbak Road exit / Nashik-Trimbak Road,Traffic choke point,73.6615256,19.9663708
+ABB Circle / ABB Signal,Traffic choke point,73.7505,20.0029
+Adgaon,Traffic choke point,73.4130156,20.0251185
+Jatra Hotel,Traffic choke point,73.8235,20.0358
+Amrutdham,Traffic choke point,73.8206889,20.0240143
+K.K. Wagh College / K.K. Wagh belt,Traffic choke point,73.8219246,20.0134117
+Canada Corner,Traffic choke point,73.769685,20.0025076
+Gangapur Naka,Traffic choke point,73.7638,20.0078
+Jehan Circle,Traffic choke point,73.7592,20.0028
+Ashok Stambh,Traffic choke point,73.7848996,20.006844
+Ramsetu Bridge,Traffic choke point,73.789,20.0082
+Dahipul,Traffic choke point,73.786,20.0025
+Delhi Darwaja,Traffic choke point,73.7875,20.0055
+Nandur Naka,Traffic choke point,73.831,20.0048
+Sant Janardan Swami Bridge,Traffic choke point,73.8173,20.0019
+Jail Road / Currency Note Press belt,Traffic choke point,73.838949,19.9647084
+Kulkarni Garden to Sadhu Vaswani Road,Parking,73.7695,20.0045
+Kulkarni Garden to BSNL Office,Parking,73.773,20.0038
+Jyoti Store-Rishikesh Hospital-Gangapur Naka,Parking,73.7655,20.0073
+Pramod Mahajan Park Entrance,Parking,73.8306054,20.0231553
+Gangapur Naka to Jehan Circle,Parking,73.7615,20.0053
+Jehan Circle to Guruji Hospital,Parking,73.7584,20.002
+Jehan Circle to ABB Circle,Parking,73.7548,20.0028
+Guruji Hospital to Pipeline Road,Parking,73.7561,20.0031
+Modak Point to Khadkali Road,Parking,73.7854,19.9972
+Thattenagar Road,Parking,73.7678,20.0007
+Behind Kulkarni Udyan,Parking,73.77,20.0042
+Shraddha Petrol Pump to Bestside Mall,Parking,73.7615,19.9988
+CBS to Shalimar,Parking,73.7836,19.9992
+Canada Corner to Vise Mala,Parking,73.774,20.0035
+Gadge Maharaj Bridge to Talakuteshwar,Parking,73.792,20.0057
+Model Colony Chowk to Bhosla Gate,Parking,73.767,20.0047
+Pandit Colony Palika Building,Parking,73.7742,20.0005
+Shalimar to Nehru Garden,Parking,73.7863,20.001
+HDFC Chowk to MSEB Office,Parking,73.773,20.0003
+"Chhatrapati Shivaji Statue to Dr. Ambedkar Statue, Nashik Road",Parking,73.8409,19.9521
+Mahatma Gandhi Road,Parking,73.784,20.0004
+Canada Corner to Panasonic Gallery,Parking,73.7755,20.0029
+Bitco Signal to Mahatma Gandhi Road,Parking,73.8408,19.9491
+Jehan Circle to Nelinkar Circle,Parking,73.757,20.002
+Shaheed Circle to Model Colony Circle,Parking,73.7675,20.0042
+Veterinary Clinic,Parking,73.7866,19.9975
+BD Bhalekar School Ground,Parking,73.7812,19.9987
+Anna Shastri Main Road,Parking,73.8378,19.951
+Angora Complex,Parking,73.778,20.0002
+Shatabdi Hospital,Parking,73.7840439,19.988147
+Rajur Bahula,Outer parking,73.673,19.946
+Dugaon Phata,Outer parking,73.719,20.031
+Thakkar Maidan,Outer parking,73.7725,20.004
+Adgaon outer parking,Outer parking,73.838,20.042
+Mhasrul,Outer parking,73.8049507,20.0463365
+Madsangavi,Outer parking,73.883,20.066
+Chincholi,Outer parking,73.9094495,19.8975833
+Khambale,Outer parking,73.632102,19.9548411
+Pahine,Outer parking,73.5527429,19.8993936
+Talwade,Outer parking,73.5553417,19.9736973
+Mahamarg Bus Stand,Transfer node,73.7829469,19.9888004
+Satpur Bus Stand,Transfer node,73.7319231,19.9912276
+Sharad Chandra Pawar Market,Transfer node,73.7905,20.0185
+Nilgiri Baug,Transfer node,73.8176,20.0132
+Lakshmi Narayan Trust Hanuman Nagar,Transfer node,73.8038,20.0224
+Sinnar Bypass Market Yard,Transfer node,73.858,19.932
+Brahma Valley,Transfer node,73.574,19.9264
+Pegalwadi,Transfer node,73.5537531,19.9393065
+Peth Road parking belt,Parking belt,73.7775,20.0305
+Dindori Road parking belt,Parking belt,73.8032903,20.0344735
+Dhule Road parking belt,Parking belt,73.833,20.04
+Pune Road parking belt,Parking belt,73.8592833,18.7572012
+Mumbai Road parking belt,Parking belt,73.8638745,20.0361024

@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #fdf6ec;
+  --surface: #fff9f0;
+  --surface-2: #f5e6d0;
+  --surface-3: #e8d4b8;
+  --border: #d4a574;
+
+  --saffron: #e8751a;
+  --saffron-hover: #d4680f;
+  --saffron-light: rgba(232, 117, 26, 0.12);
+  --maroon: #8b1a1a;
+  --gold: #c9a84c;
+  --gold-light: rgba(201, 168, 76, 0.15);
+  --temple-red: #a0261d;
+  --red: #c0392b;
+  --green: #27ae60;
+  --amber: #d4880a;
+
+  --text: #2c1810;
+  --text-dim: #7a5c44;
+  --text-dimmer: #a08060;
+
+  /* Legacy aliases so existing var(--indigo) references still work */
+  --indigo: var(--saffron);
+  --indigo-hover: var(--saffron-hover);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(232, 117, 26, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(201, 168, 76, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(139, 26, 26, 0.03) 0%, transparent 50%);
+  color: var(--text);
+  font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, h3, .heading-hindi {
+  font-family: var(--font-devanagari), var(--font-poppins), serif;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--surface-2); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--saffron); }
+
+/* ─── Decorative Utility Classes ─── */
+
+.glass {
+  background: linear-gradient(180deg, var(--surface) 0%, var(--surface) 100%);
+  border: 1px solid var(--border);
+}
+
+/* Mandala-inspired ornamental border */
+.mandala-border {
+  border: 2px solid var(--border);
+  border-image: linear-gradient(135deg, var(--saffron), var(--gold), var(--maroon), var(--gold), var(--saffron)) 1;
+}
+
+/* Decorative top accent strip for cards */
+.card-accent {
+  position: relative;
+}
+.card-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--saffron), var(--gold), var(--maroon), var(--gold), var(--saffron));
+  background-size: 200% 100%;
+  animation: shimmer 4s ease-in-out infinite;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+/* Rangoli divider */
+.rangoli-divider {
+  height: 2px;
+  border: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--gold) 15%,
+    var(--saffron) 35%,
+    var(--maroon) 50%,
+    var(--saffron) 65%,
+    var(--gold) 85%,
+    transparent 100%
+  );
+  margin: 1.5rem 0;
+}
+
+/* Warm diya glow effect */
+.diya-glow {
+  box-shadow: 0 2px 20px rgba(232, 117, 26, 0.08), 0 1px 6px rgba(201, 168, 76, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+.diya-glow:hover {
+  box-shadow: 0 4px 30px rgba(232, 117, 26, 0.15), 0 2px 12px rgba(201, 168, 76, 0.12);
+}
+
+/* Saffron gradient button */
+.btn-saffron {
+  background: linear-gradient(135deg, var(--saffron) 0%, var(--saffron-hover) 100%);
+  color: white;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: none;
+}
+.btn-saffron:hover {
+  background: linear-gradient(135deg, var(--saffron-hover) 0%, var(--maroon) 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(232, 117, 26, 0.3);
+}
+.btn-saffron:disabled {
+  opacity: 0.5;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Subtle parchment texture overlay on cards */
+.parchment-card {
+  background: var(--surface);
+  background-image:
+    radial-gradient(circle at 30% 30%, rgba(201, 168, 76, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 70% 70%, rgba(232, 117, 26, 0.03) 0%, transparent 40%);
+}
+
+/* Ornamental corners (used on feature cards) */
+.ornate-corner {
+  position: relative;
+}
+.ornate-corner::after {
+  content: '✦';
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  color: var(--gold);
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 200% 50%; }
+}
+
+@keyframes diya-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.diya-pulse {
+  animation: diya-flicker 2s ease-in-out infinite;
+}
